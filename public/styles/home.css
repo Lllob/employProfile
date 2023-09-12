@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(206, 189, 189);
+}
+
+
+.home h {
+   font-size: 30px;
+   letter-spacing: 2px;
+}
+
+.home .divImg {
+    height: 80%;
+    width: 80%;
+}
+
+.home .img {
+    width: 90%;
+    height: 100%;
+}

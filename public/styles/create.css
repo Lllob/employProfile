@@ -1,0 +1,71 @@
+.create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    background-color: blanchedalmond;
+}
+
+.create .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+   padding: 2rem 5rem;
+   background-color: rgb(196, 185, 185);
+   border: 1px solid rgb(196, 185, 185);
+   border-radius: 20px;
+
+   box-sizing: border-box;
+   box-shadow: 0 0 10px 1px;
+}
+
+.create .info input {
+    width: 20rem;
+    height: 30px;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.create .btn {
+    all: unset;
+    cursor: pointer;
+    padding: 10px 5rem;
+    background-color: aquamarine;
+    border-radius: 6px;
+    align-self: center;
+}
+
+.create .btn:hover {
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 1px;
+}
+
+.create .allStaffDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.create .horizontal {
+    height: 2px;
+    width: 20rem;
+    background-color: black;
+}
+
+.create .allStaffBtn {
+    padding: 5px 5rem;
+    border-radius: 8px;
+    background-color: aquamarine;
+    cursor: pointer;
+
+    box-sizing: border-box;
+   box-shadow: 0 0 10px 1px;
+}

@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom'; //npm i react-router-dom 
 
-function App() {
+import { PostProvider } from './contexts/PostContext';
+
+import Header from './components/Header/Header'
+import Home from './components/Home/Home'
+ import  Catalog  from './components/Catalog/Catalog'
+ import  Create  from './components/Create/Create'
+ import  Edit  from './components/Edit/Edit'
+ import  Page404  from './components/Page404/Page404';
+
+ const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="container">
+      <Header />
+      <PostProvider>
+      <main>
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/catalog" element={<Catalog />} />
+      <Route path="/create" element={<Create />} />
+      <Route path="/edit/:id" element={<Edit />} />
+      <Route path="*" element={<Page404 />} />
+      </Routes> 
+      </main>
+      </PostProvider>
+    
     </div>
-  );
+  )
 }
 
 export default App;
+
+
+
+
+

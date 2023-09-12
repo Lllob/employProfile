@@ -1,0 +1,121 @@
+.catalog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: rgb(169, 164, 164);
+    padding-bottom: 2rem;
+ }
+
+ .catalog h1 {
+    align-self: center;
+ }
+
+ .catalog .posts { 
+    margin: 0 auto;
+    padding-left: 0px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 1px;
+ }
+
+  .divH {
+    display: grid;
+    background-color: rgb(27, 140, 239);
+    grid-template-columns: repeat(5, 10rem);
+ 
+    grid-template-areas:
+    "nameH positionH wageH ageH emailH"
+    }
+
+ .catalog .post {
+   display: grid;
+   background-color: rgb(213, 225, 236);
+   grid-template-columns: repeat(5, 10rem);
+
+   grid-template-areas:
+   "name position wage age email";
+   }
+
+   .nameH {
+    grid-area: nameH;
+    border: 1px solid black;
+   }
+
+   .positionH {
+    grid-area: positionH;
+    border: 1px solid black;
+   }
+
+   .wageH {
+    grid-area: wageH;
+    border: 1px solid black;
+   }
+
+   .ageH {
+    grid-area: ageH;
+    border: 1px solid black;
+   }
+
+   .emailH {
+    grid-area: emailH;
+    border: 1px solid black;
+   }
+
+   .name {
+    grid-area: name;
+    border: 1px solid black;
+   }
+
+   .position {
+    grid-area: position;
+    border: 1px solid black;
+   }
+
+   .wage {
+    grid-area: wage;
+    border: 1px solid black;
+   }
+
+   .age {
+    grid-area: age;
+    border: 1px solid black;
+   }
+
+   .email {
+    grid-area: email;
+    border: 1px solid black;
+   }
+
+   p {
+    margin: 0px;
+    padding: 10px;
+   }
+
+   .catalog .btnDiv {
+      display: flex;
+      flex-direction: row;
+      margin: 5px auto 10px 20rem;
+      gap: 40px;
+      background-color: antiquewhite;
+      justify-content: space-around;
+      align-items: center;
+   }
+
+   .catalog .detailsBtn {
+      all: unset;
+      cursor: pointer;
+      background-color: green;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 8px;
+   }
+
+   .catalog .btn {
+       all: unset;
+       background-color: red;
+       font-size: 18px;
+       padding: 5px 10px;
+       border-radius: 8px;
+       cursor: pointer;
+   }

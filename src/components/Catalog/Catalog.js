@@ -1,12 +1,21 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import Axios from "axios";
 import { PostContext } from '../../contexts/PostContext';
 
  import CatalogItem from "./CatalogItem/CatalogItem";
- //import Axios from "axios";
 
  const Catalog = () => { 
-     let { posts } = useContext(PostContext);
-    
+     const [posts, setPosts] = useState('')
+     const { postCatalog } = useContext(PostContext);
+
+     useEffect(() => {
+        Axios.get('http://localhost:5000/catalog')
+        .then((result) => {
+               setPosts(result.data)
+               postCatalog(result.data) 
+            })
+    }, [])
+
     return (
         <section className="catalog">
         <h1>Ower catalog</h1>

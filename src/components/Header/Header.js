@@ -7,7 +7,7 @@ const Header = () => {
          <Link className="linkH" to="/">Home</Link>
           <Link className="linkH" to="/catalog">All staff</Link>
           <Link className="linkH" to="/create">Add new worker</Link>
-          <Link className="linkH" to="/search">Search</Link>
+          {/* <Link className="linkH" to="/search">Search</Link> */}
     </nav>
   </header>
   )

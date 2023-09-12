@@ -14,13 +14,13 @@ const postReducer = (state, action) => {
             return [...state, action.data];
             
          case 'DETAILS':
-            return state.map(p => p._id === action.postId ? action.data : p);
+            return state.map(p => Number(p._id) === Number(action.postId) ? action.data : p);
 
         case 'EDIT':
             return state.map(p => Number(p.id) === Number(action.postId) ? action.data : p);
 
         case 'REMOVE':
-            return state.filter(p => p.id !== action.postId);
+            return state.filter(p => Number(p.id) !== Number(action.postId));
 
         default: 
             return state;
@@ -35,15 +35,23 @@ export const PostProvider = ({
     const navigate = useNavigate();
     const [posts, dispatch] = useReducer(postReducer, []);
 
-    useEffect(() => {
-        Axios.get('http://localhost:5000/catalog')
-        .then((result) => {
-            dispatch({
-                type: 'CATALOG',
-                data: result.data, 
-            })
-       })
-    }, [])
+    // useEffect(() => {
+    //     Axios.get('http://localhost:5000/catalog')
+    //     .then((result) => {
+    //         dispatch({
+    //             type: 'CATALOG',
+    //             data: result.data, 
+    //         })
+           
+    //    })
+    // }, [])
+
+    const postCatalog = (data) => {
+        dispatch({
+            type: 'CATALOG',
+            data, 
+        })
+    };
 
     
 
@@ -75,6 +83,7 @@ export const PostProvider = ({
             data,
             postId,
         });
+        console.log()
     };
 
  
@@ -91,6 +100,7 @@ export const PostProvider = ({
     return (
         <PostContext.Provider value={{
             posts,
+            postCatalog,
             postCreate,
             postEdit,
             postRemove,

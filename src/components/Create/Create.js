@@ -1,7 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { PostContext } from '../../contexts/PostContext';
  import { Link, useNavigate } from 'react-router-dom';
-import { useState } from "react";
 import Axios from "axios";
 
 const Create = () => {

@@ -44,23 +44,35 @@ return(
       <form action="post" className="info" onSubmit={onEdit}>
       <div>
         <label htmlFor="name">Name: </label>
-        <input name="name" type="text" defaultValue={post.name} />
+        <input name="name" type="text" required
+        minLength="2" defaultValue={post.name} 
+        />
       </div>
       <div>
         <label htmlFor="position">Position: </label>
-        <input name="position" type="text" defaultValue={post.position} />
+        <input name="position" type="text" required
+        minLength="2" defaultValue={post.position} 
+        />
       </div>
       <div>
         <label htmlFor="wage">Wage: </label>
-        <input name="wage" type="number"  defaultValue={post.wage} />
+        <input name="wage" type="number" required 
+       defaultValue={post.wage} 
+       />
       </div>
       <div>
         <label htmlFor="age">Age: </label>
-        <input name="age" type="number" defaultValue={post.age} />
+        <input name="age" type="number" 
+        min='18' max='65'
+        required defaultValue={post.age} 
+        />
       </div>
       <div>
         <label htmlFor="email">Email: </label>
-        <input name="email" type="text"  defaultValue={post.email} />
+        <input name="email" type="email" required 
+        pattern="([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z]+)$"
+        defaultValue={post.email} 
+        />
       </div>
 
       <button className="btn" type='submit'>Save</button>

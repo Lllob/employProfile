@@ -1,6 +1,5 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer } from "react";
 import { useNavigate } from 'react-router-dom';
-import Axios from "axios";
 
 export const PostContext = createContext();
 
@@ -14,7 +13,7 @@ const postReducer = (state, action) => {
             return [...state, action.data];
             
          case 'DETAILS':
-            return state.map(p => Number(p._id) === Number(action.postId) ? action.data : p);
+            return state.map(p => Number(p.id) === Number(action.postId) ? action.data : p);
 
         case 'EDIT':
             return state.map(p => Number(p.id) === Number(action.postId) ? action.data : p);

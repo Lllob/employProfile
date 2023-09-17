@@ -14,7 +14,7 @@ import { PostContext } from '../../contexts/PostContext';
                setPosts(result.data)
                postCatalog(result.data) 
             })
-    }, [])
+    }, [postCatalog])
 
     return (
         <section className="catalog">

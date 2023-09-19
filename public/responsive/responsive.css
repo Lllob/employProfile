@@ -1,5 +1,14 @@
 @media (max-width: 600px) {
   
+   .header .linkH {
+    font-size: 20px;
+   }
+
+   .header .nav {
+     flex-direction: column;
+     gap: 20px;
+   }
+
     .divH {
         grid-template-columns: repeat(5, 1fr);
     }

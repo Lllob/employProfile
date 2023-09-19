@@ -6,6 +6,9 @@
     gap: 2rem;
     background-color: rgb(169, 164, 164);
     padding-bottom: 2rem;
+    width: 100%;
+    min-height: 67vh;
+    overflow-y: auto;
  }
 
  .catalog h1 {

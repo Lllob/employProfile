@@ -17,10 +17,24 @@
      align-items: center;
 }
 
+.header .divNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+}
+
 .header .linkH {
     text-decoration: none;
     list-style: none;
     color: white;
     font-size: 30px;
+}
+
+.header .linkSearch {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: 20px;
 }
 

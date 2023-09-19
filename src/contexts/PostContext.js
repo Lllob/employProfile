@@ -1,5 +1,6 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import Axios from "axios";
 
 export const PostContext = createContext();
 
@@ -20,6 +21,7 @@ const postReducer = (state, action) => {
 
         case 'REMOVE':
             return state.filter(p => Number(p.id) !== Number(action.postId));
+        
 
         default: 
             return state;
@@ -34,16 +36,16 @@ export const PostProvider = ({
     const navigate = useNavigate();
     const [posts, dispatch] = useReducer(postReducer, []);
 
-    // useEffect(() => {
-    //     Axios.get('http://localhost:5000/catalog')
-    //     .then((result) => {
-    //         dispatch({
-    //             type: 'CATALOG',
-    //             data: result.data, 
-    //         })
+    useEffect(() => {
+        Axios.get('http://localhost:5000/catalog')
+        .then((result) => {
+            dispatch({
+                type: 'CATALOG',
+                data: result.data, 
+            })
            
-    //    })
-    // }, [])
+       })
+    }, [])
 
     const postCatalog = (data) => {
         dispatch({
@@ -82,7 +84,6 @@ export const PostProvider = ({
             data,
             postId,
         });
-        console.log()
     };
 
  
@@ -92,7 +93,7 @@ export const PostProvider = ({
             postId,
         })
         navigate('/catalog')
-    }
+    };
 
 
     
